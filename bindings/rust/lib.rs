@@ -1,6 +1,6 @@
 // -*- coding: utf-8 -*-
 // ------------------------------------------------------------------------------------------------
-// Copyright © 2020, tree-sitter-python authors.
+// Copyright © 2020, tree-sitter-mojo authors.
 // See the LICENSE file in this repo for license details.
 // ------------------------------------------------------------------------------------------------
 
@@ -17,7 +17,7 @@
 //!         return x * 2
 //! "#;
 //! let mut parser = Parser::new();
-//! parser.set_language(tree_sitter_python::language()).expect("Error loading Python grammar");
+//! parser.set_language(tree_sitter_mojo::language()).expect("Error loading Python grammar");
 //! let parsed = parser.parse(code, None);
 //! # let parsed = parsed.unwrap();
 //! # let root = parsed.root_node();
@@ -32,14 +32,14 @@
 use tree_sitter::Language;
 
 extern "C" {
-    fn tree_sitter_python() -> Language;
+    fn tree_sitter_mojo() -> Language;
 }
 
 /// Returns the tree-sitter [Language][] for this grammar.
 ///
 /// [Language]: https://docs.rs/tree-sitter/*/tree_sitter/struct.Language.html
 pub fn language() -> Language {
-    unsafe { tree_sitter_python() }
+    unsafe { tree_sitter_mojo() }
 }
 
 /// The source of the Python tree-sitter grammar description.
