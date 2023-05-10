@@ -248,6 +248,7 @@ module.exports = grammar({
       $.with_statement,
       $.function_definition,
       $.class_definition,
+      $.struct_definition,
       $.decorated_definition,
       $.match_statement,
     ),
@@ -384,7 +385,7 @@ module.exports = grammar({
 
     function_definition: $ => seq(
       optional('async'),
-      'def',
+      choice('def', 'fn'),
       field('name', $.identifier),
       field('parameters', $.parameters),
       optional(
@@ -440,6 +441,13 @@ module.exports = grammar({
       'class',
       field('name', $.identifier),
       field('superclasses', optional($.argument_list)),
+      ':',
+      field('body', $._suite)
+    ),
+    struct_definition: $ => seq(
+      'struct',
+      field('name', $.identifier),
+      // todo: add generic list
       ':',
       field('body', $._suite)
     ),

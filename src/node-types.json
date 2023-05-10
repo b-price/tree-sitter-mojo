@@ -28,6 +28,10 @@
         "named": true
       },
       {
+        "type": "struct_definition",
+        "named": true
+      },
+      {
         "type": "try_statement",
         "named": true
       },
@@ -2412,6 +2416,32 @@
     }
   },
   {
+    "type": "struct_definition",
+    "named": true,
+    "fields": {
+      "body": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "block",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "subscript",
     "named": true,
     "fields": {
@@ -3022,6 +3052,10 @@
     "named": true
   },
   {
+    "type": "fn",
+    "named": false
+  },
+  {
     "type": "for",
     "named": false
   },
@@ -3103,6 +3137,10 @@
   },
   {
     "type": "return",
+    "named": false
+  },
+  {
+    "type": "struct",
     "named": false
   },
   {
