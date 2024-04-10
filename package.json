@@ -1,7 +1,7 @@
 {
-  "name": "tree-sitter-python",
+  "name": "tree-sitter-mojo",
   "version": "0.20.2",
-  "description": "Python grammar for tree-sitter",
+  "description": "Mojo grammar for tree-sitter",
   "main": "bindings/node",
   "keywords": [
     "parser",
@@ -21,12 +21,13 @@
     "parse": "tree-sitter parse",
     "test-windows": "tree-sitter test"
   },
-  "repository": "https://github.com/tree-sitter/tree-sitter-python",
+  "repository": "https://github.com/HerringtonDarkholme/tree-sitter-mojo",
   "tree-sitter": [
     {
-      "scope": "source.python",
+      "scope": "source.mojo",
       "file-types": [
-        "py"
+        "mojo",
+        "🔥"
       ]
     }
   ]
